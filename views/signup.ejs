@@ -1,0 +1,38 @@
+<% include ./partials/header%>
+<div class="ui fixed inverted menu">
+		<div class='ui container'>
+			<div class="header item"><i class="stethoscope icon"></i>Home Care</div>
+			<a href="/" class="item">Home</a>																									
+			<a href="/login" class="item right item"><i class="user md icon"></i>Doctor Login</a>
+			
+		</div>
+	</div>
+
+
+<div id="wrapper">
+
+	<form name="login-form" class="login-form" action="/register" method="POST">
+	
+		<div class="header">
+		<h1>Doctor SignUp Form</h1>
+		<span>Create a free account and get all benefits</span>
+		</div>
+	
+		<div class="content">
+		<input name="username" type="text" class="input username" placeholder="Username" />
+		<div class="user-icon"></div>
+		<input name="password" type="password" class="input password" placeholder="Password" />
+		<div class="pass-icon"></div>		
+		</div>
+
+		<div class="footer">
+		<input type="submit"class="button" />
+		</div>
+	
+	</form>
+
+</div>
+<div class="gradient"></div>
+
+
+<% include ./partials/footer%>

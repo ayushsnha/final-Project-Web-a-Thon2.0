@@ -1,0 +1,38 @@
+<% include ./partials/header%>
+<div class="ui fixed inverted menu">
+		<div class='ui container'>
+			<div class="header item"><i class="stethoscope icon"></i>Home Care</div>
+			<a href="/" class="item">Home</a>																									
+			<a href="/login" class="item right item"><i class="user md icon"></i>Doctor Login</a>
+			<a href="/signup" class="item">Doctor SignUp</a>
+		</div>
+	</div>
+<div class="ui main text container segment">
+	<div class="ui huge header">Fill your Details</div>
+
+	<form class='ui form' action='/patients' method='POST'>
+		<div class='field'>
+			<label>Patient Name:</label>
+			<input type='text' name='patient[name]' placeholder='name'>
+		</div>
+		
+		<div class='field'>
+			<label>Systolic pressure:</label>
+			<input type='text' name='patient[systolic]' placeholder='systolic pressure'>
+		</div>
+
+		<div class='field'>
+			<label>diastolic pressure:</label>
+			<input type='text' name='patient[diastolic]' placeholder='diastolic pressure'>
+		</div>
+
+		<div class='field'>
+			<label>Description</label>
+			<textarea name='patient[body]' placeholder='add your description'></textarea>
+		</div>
+		
+		
+		<button class="ui secondary button">Submit</button>
+	</form>
+</div>
+<% include ./partials/footer%>

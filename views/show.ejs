@@ -1,0 +1,37 @@
+<% include ./partials/header%>
+<div class="ui fixed inverted menu">
+		<div class='ui container'>
+			<div class="header item"><i class="stethoscope icon"></i>Home Care</div>
+			<a href="/" class="item right item"><i class="arrow circle right icon"></i>Logout</a>
+		</div>
+	</div>
+<div class="ui main text container segment">
+	<div class="ui huge header"><h2><strong>Patient Name:</strong><%= patient.name%></h2></div>
+	<div class="ui top attached">
+		<div class="item">
+			
+			<div class="content">
+				<span><img class="image1" src="<%= patient.image %>"></span>
+			</div>
+			<div class="content">
+				<span><strong>Systolic Pressure:</strong><%= patient.systolic %></span>
+			</div>
+			<div class="content">
+				<span><strong>Diastolic Pressure:</strong><%= patient.diastolic%></span>
+			</div>
+			<div class="content">
+				<span><strong>Request submitted:</strong><%= patient.created.toDateString() %></span>
+			</div>
+
+			<div class="description">
+				<p class="f1"><strong>Additional Information:<br></strong><%= patient.body%></p>
+			</div>
+				
+				<form id='delete' action='/patients/<%= patient._id%>?_method=DELETE' method='POST'>
+					<button class='ui red basic button'>Delete</button>
+				</form>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer%>

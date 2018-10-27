@@ -1,0 +1,38 @@
+<% include ./partials/header%>
+<div class="ui fixed inverted menu">
+		<div class='ui container'>
+			<div class="header item"><i class="stethoscope icon"></i>Home Care</div>
+			<a href="/" class="item right item"><i class="arrow circle right icon"></i>Logout</a>
+		</div>
+	</div>
+<div class='ui main text container'>
+	<div class='ui huge header'>Patients</div>
+	<div class='ui top attached segment'>
+		<div class='ui divided items'>
+			<% patients.forEach(function(patient){ %>
+				<div class='item'>
+					<div class='image'>
+						<img src="<%= patient.image %>">
+					</div>
+					<div class='content'>
+						<a class='header' href='/patients/<%=patient._id%>'><%=patient.name%></a>
+						<div class='meta'>
+							<span><%= patient.created.toDateString() %></span>
+						</div>
+						<div class='description'>
+							<p class="f1"><%= patient.body%>...</p>
+						</div>
+						<div class='extra'>
+							<a class='ui floated basic violet button' href='/patients/<%=patient._id%>'>
+								Read More
+								<i class='right chevron icon'></i>
+							</a>
+						</div>	
+					</div>
+				</div>
+			<%}) %>
+		</div>
+	</div>
+</div>
+
+<% include ./partials/footer%>
